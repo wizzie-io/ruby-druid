@@ -331,7 +331,7 @@ describe Druid::Query do
 
   describe '#first_last_aggregators' do
     %w[doubleFirst doubleLast longFirst longLast floatFirst floatLast
-       stringLast].each do |type|
+       stringFirst stringLast].each do |type|
       it "builds aggregations with '#{type}' type" do
         @query.send(type.underscore, :a, :b)
         expect(JSON.parse(@query.query.to_json)['aggregations']).to eq [
