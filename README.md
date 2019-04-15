@@ -72,7 +72,7 @@ Druid::Query::Builder.new.time_series([:aggregate1, :aggregate2])
 Druid::Query::Builder.new.long_sum([:aggregate1, :aggregate2])
 ```
 
-In the same way could be used the following methods for [aggregations](http://druid.io/docs/latest/querying/aggregations.html) adding: `double_sum, count, min, max, hyper_unique`
+In the same way could be used the following methods for [aggregations](http://druid.io/docs/latest/querying/aggregations.html) adding: `float_sum, double_sum, count, min, max, hyper_unique`
 
 #### cardinality
 
