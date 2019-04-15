@@ -354,7 +354,7 @@ describe Druid::Query do
       { 'type' => 'longSum', 'name' => 'e', 'fieldName' => 'e'},
       { 'type' => 'longSum', 'name' => 'f', 'fieldName' => 'f'},
       { 'type' => 'doubleSum', 'name' => 'x', 'fieldName' => 'x'},
-      { 'type' => 'doubleSum', 'name' => 'y', 'fieldName' => 'y'}
+      { 'type' => 'doubleSum', 'name' => 'y', 'fieldName' => 'y'},
     ])
   end
 
@@ -375,6 +375,7 @@ describe Druid::Query do
     q.push q[-1].group_by('c')
     q.push q[-1].long_sum('d')
     q.push q[-1].double_sum('e')
+    q.push q[-1].float_sum('f')
     q.push q[-1].filter{a.eq 1}
     q.push q[-1].interval("2013-01-26T00", "2020-01-26T00:15")
     q.push q[-1].granularity(:day)
